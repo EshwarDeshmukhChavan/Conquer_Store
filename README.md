@@ -137,24 +137,26 @@ cd frontend
 npm test
 ```
 
-📂 Folder Structure
+## 📂 Folder Structure
+
+```bash
 Conquer_Store/
 ├── backend/
-│   ├── controllers/      # Logic for handling route requests
-│   ├── models/           # Mongoose schemas
-│   ├── routes/           # API route definitions
-│   ├── middleware/       # JWT auth, error handling, etc.
-│   └── utils/            # Utility functions (e.g., token, logger)
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   └── utils/
 ├── frontend/
 │   ├── src/
-│   │   ├── components/   # Reusable UI components
-│   │   ├── pages/        # Main route pages (Home, Product, etc.)
-│   │   ├── context/      # React Context for global state
-│   │   └── utils/        # Frontend helpers (e.g., API calls)
-├── .env                  # Environment variables
-├── package.json          # Dependency management
-└── README.md             # Project documentation
-
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   └── utils/
+├── .env
+├── package.json
+└── README.md
+```
 
 🔌 API Endpoints
 👤 User Routes
