@@ -140,118 +140,25 @@ npm test
 ## 📂 Folder Structure
 
 ```bash
-conquer-store/
-├── .env
-├── package.json
-├── package-lock.json
-├── admin/
-│   ├── .env
-│   ├── models/
-│   │   ├── Cart.js
-│   │   ├── Category.js
-│   │   ├── Product.js
-│   │   ├── Segment.js
-│   │   └── User.js
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── postcss.config.js
-│   ├── public/
-│   │   ├── index.html
-│   │   └── manifest.json
-│   ├── routes/
-│   │   ├── auth.js
-│   │   ├── categories.js
-│   │   ├── orders.js
-│   │   ├── products.js
-│   │   ├── segments.js
-│   │   ├── settings.js
-│   │   └── users.js
-│   ├── server.js
-│   ├── src/
-│   │   ├── App.jsx
-│   │   ├── components/
-│   │   ├── config/
-│   │   ├── contexts/
-│   │   ├── index.js
-│   │   ├── models/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── styles/
-│   ├── tailwind.config.js
-│   └── vite.config.js
-├── backend/
-│   ├── .env
-│   ├── assets/
-│   │   └── [various image files]
-│   ├── config/
-│   │   ├── cloudinary.js
-│   │   └── db.js
-│   ├── controllers/
-│   │   ├── adminController.js
-│   │   ├── authController.js
-│   │   ├── cartController.js
-│   │   ├── paymentController.js
-│   │   ├── productController.js
-│   │   ├── searchController.js
-│   │   ├── segmentController.js
-│   │   └── wishlistController.js
-│   ├── createAdmin.js
-│   ├── frontend/
-│   │   └── src/
-│   ├── middleware/
-│   │   ├── authMiddleware.js
-│   │   └── roleCheck.js
-│   ├── models/
-│   │   ├── Cart.js
-│   │   ├── Category.js
-│   │   ├── Discount.js
-│   │   ├── Order.js
-│   │   ├── Organization.js
-│   │   ├── Product.js
-│   │   ├── Segment.js
-│   │   ├── User.js
-│   │   └── Wishlist.js
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── routes/
-│   │   ├── adminRoutes.js
-│   │   ├── authRoutes.js
-│   │   ├── cartRoutes.js
-│   │   ├── paymentRoutes.js
-│   │   ├── productRoutes.js
-│   │   ├── searchRoutes.js
-│   │   ├── segmentRoutes.js
-│   │   └── wishlistRoutes.js
-│   ├── scripts/
-│   ├── seed.js
-│   ├── seed2.js
-│   └── server.js
-├── frontend/
-│   ├── .env
-│   ├── index.html
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── postcss.config.js
-│   ├── src/
-│   │   ├── App.css
-│   │   ├── App.js
-│   │   ├── App.jsx
-│   │   ├── api/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── main.jsx
-│   │   ├── pages/
-│   │   ├── store/
-│   │   └── utils/
-│   ├── tailwind.config.js
-│   └── vite.config.js
-└── Conquer_Store/
-    ├── .gitattributes
-    ├── README.md
-    ├── admin/
-    ├── backend/
-    └── frontend/
+Conquer_Store/
+├── admin/                 # Admin dashboard (React + Express)
+│   ├── models/            # Mongoose models
+│   ├── routes/            # Express routes
+│   ├── src/               # React components, pages, contexts
+│   └── server.js          # Express server entry
+├── backend/               # Main backend API
+│   ├── controllers/       # Route logic
+│   ├── models/            # Database schemas
+│   ├── routes/            # API endpoints
+│   ├── middleware/        # Auth, role-checking
+│   └── server.js          # Backend server entry
+├── frontend/              # Customer-facing frontend (React)
+│   ├── src/               # React app (components, pages, store)
+│   └── index.html         # Main HTML template
+├── .env                   # Environment variables
+├── README.md              # Project documentation
+└── package.json           # Project metadata and scripts
+
 ```
 The project is organized into three main components:
 
