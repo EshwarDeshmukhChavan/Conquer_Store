@@ -158,29 +158,72 @@ Conquer_Store/
 └── README.md
 ```
 
-🔌 API Endpoints
-👤 User Routes
-Method	Endpoint	Description
-POST	/api/auth/register	Register a new user
-POST	/api/auth/login	Login and receive JWT
-GET	/api/users/me	Get current user profile
+## API Endpoints
+### Authentication
+- POST /api/auth/register - Register a new user
+- POST /api/auth/login - Login user
+- POST /api/auth/forgot-password - Request password reset
+### Products
+- GET /api/products - Get all products
+- GET /api/products/:id - Get product by ID
+- GET /api/products/category/:category - Get products by category
+### Cart
+- GET /api/cart - Get user's cart
+- POST /api/cart - Add item to cart
+- PUT /api/cart/:itemId - Update cart item
+- DELETE /api/cart/:itemId - Remove item from cart
+- DELETE /api/cart - Clear cart
+### Wishlist
+- GET /api/wishlist - Get user's wishlist
+- POST /api/wishlist - Add item to wishlist
+- DELETE /api/wishlist/:itemId - Remove item from wishlist
+### Payment
+- POST /api/payment/create-order - Create Razorpay order
+- POST /api/payment/save-order - Save order details
+- GET /api/payment/orders - Get user's orders
+- GET /api/payment/order/:orderId - Get order details
+### Admin
+- GET /api/admin/products - Get all products (admin)
+- POST /api/admin/products - Add new product (admin)
+- PUT /api/admin/products/:id - Update product (admin)
+- DELETE /api/admin/products/:id - Delete product (admin)
+- GET /api/admin/orders - Get all orders (admin)
+- PUT /api/admin/orders/:id - Update order status (admin)
+## Database Models
+### User
+- Email, password, name, role (user/admin)
+### Product
+- Name, description, price, discountedPrice, category, images, stock
+### Category
+- Name, slug, description, image
+### Cart
+- User reference, items array (product, quantity, price)
+### Order
+- User reference, products array, amount, address, payment details, status
+### Wishlist
+- User reference, products array
+## Deployment
+### Backend
+1. Set up environment variables on your hosting platform
+2. Build and deploy the Node.js application
+### Frontend
+1. Build the React application: npm run build
+2. Deploy the build folder to your hosting service
+## Contributing
+1. Fork the repository
+2. Create your feature branch: git checkout -b feature/amazing-feature
+3. Commit your changes: git commit -m 'Add some amazing feature'
+4. Push to the branch: git push origin feature/amazing-feature
+5. Open a Pull Request
+## License
+This project is licensed under the ISC License
 
-📦 Product Routes
-Method	Endpoint	Description
-GET	/api/products	List all products
-POST	/api/products	Add product (Admin only)
-PUT	/api/products/:id	Update product (Admin only)
+## Acknowledgements
+- React
+- Node.js
+- Express
+- MongoDB
+- TailwindCSS
+- Razorpay
+- Cloudinary
 
-🛒 Cart & Wishlist
-Method	Endpoint	Description
-POST	/api/cart/add	Add item to cart
-GET	/api/wishlist	View wishlist
-
-📦 Orders
-Method	Endpoint	Description
-POST	/api/orders/create	Create a new order
-GET	/api/orders/history	View user order history
-
-💳 Payments
-Method	Endpoint	Description
-POST	/api/payments/verify	Verify Razorpay payment
