@@ -105,4 +105,80 @@ Clone the repo and install dependencies:
 git clone https://github.com/EshwarDeshmukhChavan/Conquer_Store
 cd Conquer_Store
 npm install
+```
 
+## 🖥️ Usage
+
+Start the backend and frontend development servers:
+
+```bash
+# Start Backend
+cd backend
+npm install
+npm run dev
+
+# Start Frontend
+cd ../frontend
+npm install
+npm run dev
+```
+
+🧪 Testing
+To run tests for the backend or frontend (if configured):
+
+🔹 Backend Testing (using Jest or similar)
+```bash
+cd backend
+npm test
+```
+🔹 Frontend Testing (if setup with React Testing Library / Jest)
+```bash
+cd frontend
+npm test
+```
+
+📂 Folder Structure
+Conquer_Store/
+├── backend/
+│   ├── controllers/      # Logic for handling route requests
+│   ├── models/           # Mongoose schemas
+│   ├── routes/           # API route definitions
+│   ├── middleware/       # JWT auth, error handling, etc.
+│   └── utils/            # Utility functions (e.g., token, logger)
+├── frontend/
+│   ├── src/
+│   │   ├── components/   # Reusable UI components
+│   │   ├── pages/        # Main route pages (Home, Product, etc.)
+│   │   ├── context/      # React Context for global state
+│   │   └── utils/        # Frontend helpers (e.g., API calls)
+├── .env                  # Environment variables
+├── package.json          # Dependency management
+└── README.md             # Project documentation
+
+
+🔌 API Endpoints
+👤 User Routes
+Method	Endpoint	Description
+POST	/api/auth/register	Register a new user
+POST	/api/auth/login	Login and receive JWT
+GET	/api/users/me	Get current user profile
+
+📦 Product Routes
+Method	Endpoint	Description
+GET	/api/products	List all products
+POST	/api/products	Add product (Admin only)
+PUT	/api/products/:id	Update product (Admin only)
+
+🛒 Cart & Wishlist
+Method	Endpoint	Description
+POST	/api/cart/add	Add item to cart
+GET	/api/wishlist	View wishlist
+
+📦 Orders
+Method	Endpoint	Description
+POST	/api/orders/create	Create a new order
+GET	/api/orders/history	View user order history
+
+💳 Payments
+Method	Endpoint	Description
+POST	/api/payments/verify	Verify Razorpay payment
